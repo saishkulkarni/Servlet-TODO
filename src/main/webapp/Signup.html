@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Signup</title>
+<style type="text/css">
+body {
+	background-image:
+		url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg");
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+	<h1>Enter Your Details</h1>
+
+	<form action="signup" method="post">
+		<fieldset>
+			<table>
+				<tr>
+					<th>Name</th>
+					<td><input type="text" name="name" required="required"></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="email" name="email" required="required"></td>
+				</tr>
+				<tr>
+					<th>Mobile</th>
+					<td><input type="tel" pattern="[0-9]{10}" name="mobile" required="required"></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="password" name="password" required="required"></td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+					<td><input type="radio" name="gender" value="male">Male <input
+						type="radio" name="gender" value="female">Female</td>
+				</tr>
+				<tr>
+					<th>Date of Birth</th>
+					<td><input type="date" name="dob" required="required"></td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td><textarea rows="5" cols="30" name="address" required="required"></textarea></td>
+				</tr>
+				<tr>
+					<td><button>Signup</button></td>
+					<td><button>Cancel</button></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<br>
+	<a href="Login.html"><button>Already have Account? Click here to Login</button></a>
+</body>
+</html>
