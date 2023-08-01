@@ -1,16 +1,15 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDao;
-import dto.Task;
 import dto.User;
 
 @WebServlet("/login")
@@ -27,11 +26,11 @@ public class Login extends HttpServlet {
 			req.getRequestDispatcher("Login.html").include(req, resp);
 		} else {
 			if (user.getPassword().equals(password)) {
+				HttpSession httpSession=req.getSession();
+				httpSession.setAttribute("user", user);
+				httpSession.setMaxInactiveInterval(10);
 				resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
-				//fetch data from database
-				List<Task> list=dao.fetchAllTasks();
-				//set the data in request
-				req.setAttribute("list", list);
+				req.setAttribute("list", user.getTasks());
 				req.getRequestDispatcher("Home.jsp").include(req, resp);
 			} else {
 				resp.getWriter().print("<h1 style='color:red'>Invalid Password</h1>");

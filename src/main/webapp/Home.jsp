@@ -16,7 +16,7 @@ body {
 </style>
 </head>
 <body>
-	<h1 align="center">Welcome to TODO Home</h1>
+	<h1>Welcome to TODO Home</h1>
 	<table border="1">
 		<tr>
 			<th>ID</th>
@@ -51,8 +51,8 @@ body {
 	</table>
 	<br>
 	<br>
-	<a href="AddTask.html"><button style="margin-left: 20px">Add
+	<a href="checkaddtasksession"><button style="margin-left: 20px">Add
 			Task</button></a>
-	<a href="Login.html"><button style="margin-left: 500px">Logout</button></a>
+	<a href="logout"><button style="margin-left: 500px">Logout</button></a>
 </body>
 </html>

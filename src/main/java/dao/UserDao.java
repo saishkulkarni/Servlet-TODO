@@ -39,4 +39,10 @@ public class UserDao {
 	public List<Task> fetchAllTasks() {
 		return manager.createQuery("select x from Task x").getResultList();
 	}
+
+	public void update(User user) {
+		transaction.begin();
+		manager.merge(user);
+		transaction.commit();
+	}
 }
