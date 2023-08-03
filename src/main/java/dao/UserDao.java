@@ -45,4 +45,14 @@ public class UserDao {
 		manager.merge(user);
 		transaction.commit();
 	}
+
+	public Task fetchTask(int id) {
+		return manager.find(Task.class, id);
+	}
+
+	public void update(Task task) {
+		transaction.begin();
+		manager.merge(task);
+		transaction.commit();
+	}
 }

@@ -28,7 +28,7 @@ public class Login extends HttpServlet {
 			if (user.getPassword().equals(password)) {
 				HttpSession httpSession=req.getSession();
 				httpSession.setAttribute("user", user);
-				httpSession.setMaxInactiveInterval(10);
+				httpSession.setMaxInactiveInterval(30);
 				resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 				req.setAttribute("list", user.getTasks());
 				req.getRequestDispatcher("Home.jsp").include(req, resp);
