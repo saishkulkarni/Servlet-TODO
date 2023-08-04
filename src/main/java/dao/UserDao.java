@@ -55,4 +55,10 @@ public class UserDao {
 		manager.merge(task);
 		transaction.commit();
 	}
+
+	public void remove(Task task) {
+		transaction.begin();
+		manager.remove(task);
+		transaction.commit();
+	}
 }

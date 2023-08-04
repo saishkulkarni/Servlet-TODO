@@ -42,8 +42,8 @@ body {
 			<td><%=task.getCompletetionDate()%></td>
 			<td><%if(task.isStatus())%>Completed<%else%>Not Completed</td>
 			<td><a href="changestatus?id=<%=task.getId()%>"><button>Change</button></a></td>
-			<td><button>Delete</button></td>
-			<td><button>Update</button></td>
+			<td><a href="deletetask?id=<%=task.getId()%>"><button>Delete</button></a></td>
+			<td><a href="edittask?id=<%=task.getId()%>"><button>Update</button></a></td>
 		</tr>
 		<%
 		}
